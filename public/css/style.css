@@ -1,0 +1,43 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  background-color: green;
+}
+
+.lamba {
+  float: left;
+  /* overflow:   */
+  width: 250px;
+  height: 300px;
+  /* display: inline-block; */
+}
+.open {
+  background-color: rgb(235, 231, 11);
+}
+
+.close {
+  background-color: rgb(128, 9, 9);
+}
+
+img {
+  width: inherit;
+  /* height:inherit; */
+  position: relative;
+  /* transform: translateY(-50%); */
+}
+/* 
+.responsive {
+    max-width: 100px;
+    height: 100px;
+  } */
+
+p {
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+
+  /* background-color: white; */
+}

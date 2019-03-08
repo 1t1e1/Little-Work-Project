@@ -1,0 +1,32 @@
+<!-- <style src='css/style.css'></style> -->
+<link rel='stylesheet' href='/css/style.css' />
+<h1>
+home page
+</h1>
+
+<%var id = 0 %>
+<% function test(){ %>
+ <%   var element = document.getElementById("lambaID0"); %>
+ <%   element.classList.toggle("close"); %>
+ <%   element.classList.toggle("open"); %>
+<% } %>
+
+<div id="lambaID<%=id%>" class="lamba open responsive" onclick="test()">
+  <img  src="/images/bulb.png" />
+  <p> lamba <%= 0 %></p>
+</div>
+
+
+
+<% for (let i = 0; i < 5; i++) { %>
+    <div class="lamba close responsive">
+      <img src="/images/bulb.png" />
+      <p> lamba <%= i %></p>
+    </div>
+<% } %>
+<% for (let i = 0; i < 5; i++) { %>
+    <div class="lamba open responsive" >
+      <img  src="/images/bulb.png" />
+      <p> lamba <%= i %></p>
+    </div>
+<% } %>
