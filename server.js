@@ -2,12 +2,14 @@ var express = require('express');
 var path = require("path");
 var app = express();
 
+
 app.set('view engine', 'ejs');
 // app.use('/public', express.static(process.cwd() + '/public'));
 app.use(express.static(path.join(__dirname,'/public')))
 
+var arrayValued = [2, 4 , 5, 6, 0 ];
 app.get('/', function(req, res) {
-    res.render('pages/index');
+    res.render('pages/index',{ arrayValued : arrayValued});
 });
 
 // // about page 

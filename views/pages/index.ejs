@@ -1,32 +1,48 @@
 <!-- <style src='css/style.css'></style> -->
-<link rel='stylesheet' href='/css/style.css' />
+<link rel="stylesheet" href="/css/style.css" />
 <h1>
-home page
+  home page
 </h1>
 
-<%var id = 0 %>
+<!-- <%var id = 0 %>
 <% function test(){ %>
  <%   var element = document.getElementById("lambaID0"); %>
  <%   element.classList.toggle("close"); %>
  <%   element.classList.toggle("open"); %>
-<% } %>
+<% } %> -->
 
-<div id="lambaID<%=id%>" class="lamba open responsive" onclick="test()">
-  <img  src="/images/bulb.png" />
-  <p> lamba <%= 0 %></p>
+<script>
+
+  // function test() {
+  //   var element = document.getElementById("lambaID0");
+  //   element.classList.toggle("close");
+  //   element.classList.toggle("open");
+  // }
+
+  document.addEventListener('click', function(e){
+    if( null == e.originalTarget.parentElement){
+    } else if ("lamba" === e.originalTarget.parentElement.classList[0]){
+      element = e.originalTarget.parentElement;
+      element.classList.toggle("close");
+      element.classList.toggle("open");
+    }  
+  });
+  </script>
+
+<!-- <div id="lambaID0" class="lamba open responsive" >
+  <img src="/images/bulb.png" />
+  <p>lamba <%= 0 %></p>
+</div> -->
+
+
+<% var arrayValued; %>
+<% for (let i = 0; i < 10; i++) { %>
+<% if ( arrayValued.includes(i)) { %>
+<div id="lambaID<%=i%>" class="lamba close responsive">
+<%} else {%>
+<div id="lambaID<%=i%>" class="lamba open responsive">
+<% } %> 
+  <img src="/images/bulb.png" />
+  <p>lamba <%= i %></p>
 </div>
-
-
-
-<% for (let i = 0; i < 5; i++) { %>
-    <div class="lamba close responsive">
-      <img src="/images/bulb.png" />
-      <p> lamba <%= i %></p>
-    </div>
-<% } %>
-<% for (let i = 0; i < 5; i++) { %>
-    <div class="lamba open responsive" >
-      <img  src="/images/bulb.png" />
-      <p> lamba <%= i %></p>
-    </div>
-<% } %>
+<% } %> 
