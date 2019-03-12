@@ -9,8 +9,9 @@ h1 {
 .lamba {
   float: left;
   /* overflow:   */
+  /* width: min-content; */
   width: 250px;
-  height: 300px;
+  height: fit-content;
   /* display: inline-block; */
 }
 
@@ -19,10 +20,11 @@ h1 {
 }
 
 .close {
-  background-color: rgb(128, 9, 9);
+  background-color: black;
 }
 
 img {
+  filter: invert(100%);
   width: inherit;
   /* height:inherit; */
   position: relative;
@@ -35,7 +37,7 @@ img {
   } */
 
 p {
-  color: black;
+  color: white;
   font-size: 20px;
   text-align: center;
   vertical-align: middle;
