@@ -16,7 +16,7 @@ h1 {
 }
 
 .open {
-  background-color: rgb(235, 231, 11);
+  background-color: rgb(255, 235, 51);
 }
 
 .close {
@@ -42,5 +42,4 @@ p {
   text-align: center;
   vertical-align: middle;
 
-  /* background-color: white; */
 }

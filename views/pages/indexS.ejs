@@ -1,0 +1,63 @@
+<!-- <style src='css/style.css'></style> -->
+<link rel="stylesheet" href="/css/style.css" />
+
+<% var arrayValued; %>
+<% arrayValued.forEach((element) => { %> 
+  <%let index = element.number%>
+  
+  <% if ( !element.status) { %>
+    <div id="<%=index%>" class="lamba close"  >
+      <%} else {%>
+    <div id="<%=index%>" class="lamba open">
+      <% } %> 
+      <img src="/images/bulb.png" />
+      <p>lamba <%=index%></p>
+    </div>
+<%});%> 
+    
+          
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+  // alternative to $(function () {})
+  function domReady(fn) {
+  // If we're early to the party
+  document.addEventListener("DOMContentLoaded", fn);
+  // If late; I mean on time.
+  if (document.readyState === "interactive" || document.readyState === "complete" ) {
+    fn();
+  }
+}
+
+domReady(() => {
+    var socket = io();
+    var list = document.querySelectorAll(".lamba")
+    var element;
+    
+    
+    for(var i = 0; i < list.length; i++) {
+      list[i].addEventListener("click", (event) => {
+        if( null == event.originalTarget.parentElement){
+        } else if ("lamba" === event.originalTarget.parentElement.classList[0]){
+          element = event.originalTarget.parentElement;
+          
+          var clicked_button = { id: element.id };
+          socket.emit('button clicked', clicked_button ); 
+        }
+      });
+    // }
+    } 
+    
+    socket.on('button clicked', function(number){
+      element = document.getElementById(number.id);
+      ChangeTheLamp(element);      
+    });
+})
+    
+
+  function ChangeTheLamp(el) {
+    el.classList.toggle("close");
+    el.classList.toggle("open");
+  }
+    
+</script>
