@@ -1,19 +1,50 @@
-body {
-  background-color: lightblue;
-}
-
 h1 {
   background-color: green;
 }
+body {
+  background-color: lightblue;
+  margin: 0%;
+  padding: 0%;
+  height: 100%;
+}
+.hepsi {
+  /* border: 30px solid pink; */
+  margin: 0%;
+  padding: 0%;
+  width: 100%;
+  min-width: 200px;
+  /* align-items: center; */
+  /* padding-right: 0%; */
+  text-align: center;
+
+
+
+}
+
+
 
 .lamba {
   float: left;
-  /* overflow:   */
+  /* overflow: ; */
   /* width: min-content; */
-  width: 250px;
-  height: fit-content;
+  min-width: 19.5%;
+  max-width: 250px;
+  width: 100%;
   /* display: inline-block; */
+  height: 200px;
+  border: 3px solid #73AD21;
 }
+
+button{
+  width: 100%; 
+  height:  inherit;
+  text-align: center;
+  display: inline-block;
+  background-color: Transparent;
+  /* fit-content; */
+
+}
+
 
 .open {
   background-color: rgb(255, 235, 51);
@@ -23,23 +54,24 @@ h1 {
   background-color: black;
 }
 
+
 img {
   filter: invert(100%);
-  width: inherit;
-  /* height:inherit; */
-  position: relative;
+  
+  /* position: absolute; */
+  
   /* transform: translateY(-50%); */
+  display: inline-block;
+  
+  border: 3px solid pink;
+  /* en son da borderlar kaldirilacak */
 }
-/* 
-.responsive {
-    max-width: 100px;
-    height: 100px;
-  } */
 
-p {
+.parag {
   color: white;
   font-size: 20px;
-  text-align: center;
-  vertical-align: middle;
+  /* text-align: center; */
+  /* vertical-align: middle; */
+  
 
 }

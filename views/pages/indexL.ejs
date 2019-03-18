@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="/css/style.css" />
+
+<% var arrayValued; %>
+<% arrayValued.forEach((element) => { %> 
+  <%let index = element.number%>
+  
+<div class="hepsi" action="change/<%=index%>" method="PUT">
+  <% if ( !element.status) { %>
+    <div class="lamba close" id="<%=index%>" >
+      <%} else {%>
+    <div class="lamba open" id="<%=index%>" >
+      <% } %> 
+      <button type="button"  onclick="clicked(<%=index%>)"  >  
+          <img src="/images/bulb.png" width="100px" />
+          <br>    <span class="parag">Lamba <%=index%></span> 
+      </button>
+    </div>
+</div>
+
+<%});%> 
+    
+          
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+
+  // alternative to $(function () {})
+  function domReady(fn) {
+  // If we're early to the party
+  document.addEventListener("DOMContentLoaded", fn);
+  // If late; I mean on time.
+  if (document.readyState === "interactive" || document.readyState === "complete" ) {
+    fn();
+  }
+}
+
+
+
+domReady(() => {
+  socket.on('broadcasting', function(clicked_button){
+    element = document.getElementById(clicked_button.number);
+    ChangeTheLamp(element);      
+  });
+  
+})
+    
+
+  function ChangeTheLamp(el) {
+    el.classList.toggle("close");
+    el.classList.toggle("open");
+  }
+
+  function clicked(number) {
+    var clicked_button = { number : number };
+    socket.emit('button clicked', clicked_button );
+  }
+
+
+</script>
